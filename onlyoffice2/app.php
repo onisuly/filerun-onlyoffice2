@@ -122,7 +122,7 @@ class custom_onlyoffice2 extends \FileRun\Files\Plugin
                     'user' =>
                         array(
                             'id' => \S::safeJS($auth->currentUserInfo['id']),
-                            'name' => \S::safeJS(trim($auth->currentUserInfo['name'] . ' ' . $auth->currentUserInfo['name2']))
+                            'name' => \S::safeJS($author),
                         ),
                 ),
             'customization' =>
