@@ -121,9 +121,8 @@ class custom_onlyoffice2 extends \FileRun\Files\Plugin
                     'lang' => \FileRun\UI\TranslationUtils::getShortName(\FileRun\Lang::getCurrent()),
                     'user' =>
                         array(
-                            'firstname' => \S::safeJS($auth->currentUserInfo['name']),
                             'id' => \S::safeJS($auth->currentUserInfo['id']),
-                            'lastname' => \S::safeJS($auth->currentUserInfo['name2']),
+                            'name' => \S::safeJS(trim($auth->currentUserInfo['name'] . ' ' . $auth->currentUserInfo['name2']))
                         ),
                 ),
             'customization' =>
