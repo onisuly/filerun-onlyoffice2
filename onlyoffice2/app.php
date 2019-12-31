@@ -95,7 +95,7 @@ class custom_onlyoffice2 extends \FileRun\Files\Plugin
         }
 
         global $auth;
-        $author = \FileRun\Users::formatFullName($auth->currentUserInfo);
+        $owner = \FileRun\Users::formatFullName($auth->currentUserInfo);
 
         $fileSize = \FM::getFileSize($data['fullPath']);
         $fileModifTime = filemtime($data['fullPath']);
@@ -112,7 +112,7 @@ class custom_onlyoffice2 extends \FileRun\Files\Plugin
                     'url' => \S::safeJS($url),
                     'info' =>
                         array(
-                            'author' => \S::safeJS($author),
+                            'owner' => \S::safeJS($owner),
                         ),
                 ),
             'editorConfig' =>
@@ -122,7 +122,7 @@ class custom_onlyoffice2 extends \FileRun\Files\Plugin
                     'user' =>
                         array(
                             'id' => \S::safeJS($auth->currentUserInfo['id']),
-                            'name' => \S::safeJS($author),
+                            'name' => \S::safeJS($owner),
                         ),
                 ),
             'customization' =>
